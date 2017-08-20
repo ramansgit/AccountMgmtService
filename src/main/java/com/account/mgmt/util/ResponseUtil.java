@@ -3,8 +3,6 @@ package com.account.mgmt.util;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
-import org.jose4j.jwt.consumer.InvalidJwtException;
-
 import com.account.mgmt.exception.EmailException;
 import com.account.mgmt.exception.JWTIssuerException;
 import com.account.mgmt.exception.MongoDatabaseException;
@@ -47,12 +45,7 @@ public class ResponseUtil {
 					.build();
 		}
 
-		if (e instanceof InvalidJwtException) {
-			e.printStackTrace();
-			return Response.ok().status(Status.INTERNAL_SERVER_ERROR).entity(
-					new ApiResponseMessage(new ApiError(AccountMgmtConstant.JWT_TOKEN_EXCEPTION, e.getMessage())))
-					.build();
-		}
+	
 		if (e instanceof JWTIssuerException) {
 			e.printStackTrace();
 			return Response.ok().status(Status.INTERNAL_SERVER_ERROR).entity(

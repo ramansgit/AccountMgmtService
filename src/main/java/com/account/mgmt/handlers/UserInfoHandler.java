@@ -1,7 +1,5 @@
 package com.account.mgmt.handlers;
 
-import org.jose4j.jwt.consumer.InvalidJwtException;
-
 import com.account.mgmt.db.AccountMgmtDaoService;
 import com.account.mgmt.exception.MongoDatabaseException;
 import com.account.mgmt.exception.UnAuthorizedAccessException;
@@ -26,7 +24,7 @@ public class UserInfoHandler {
 			throw new UnAuthorizedAccessException(AccountMgmtConstant.INVALID_JWT_TOKEN_ERR_MSG);
 		}
 		// validate jwt is valid and not expired.
-		return JWTIssuer.validateJwtToken(jwt);
+		return JWTIssuer.parseJWT(jwt);
 
 	}
 

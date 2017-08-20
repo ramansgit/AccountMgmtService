@@ -82,7 +82,7 @@ public class SignInHandler {
 			throws JWTIssuerException, EmailException, ValidationException {
 
 		if (userId != null && !userId.isEmpty()) {
-			String jwt = JWTIssuer.buildJWT(userId);
+			String jwt = JWTIssuer.buildJWToken(userId);
 			
 			if (jwt != null && !jwt.isEmpty()) {
 				LOGGER.info("sending email to user");

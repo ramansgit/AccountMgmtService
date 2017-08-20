@@ -11,9 +11,6 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.Response;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.account.mgmt.controller.AccountMgmtApiService;
 import com.account.mgmt.controller.AccountMgmtApiServiceImpl;
 import com.account.mgmt.model.ApiResponseMessage;
@@ -30,8 +27,7 @@ import com.wordnik.swagger.annotations.ApiResponses;
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2016-04-10T14:43:58.709Z")
 public class AccountMgmtApi {
 	private final AccountMgmtApiService delegate = new AccountMgmtApiServiceImpl();
-	private static final Logger LOGGER = LoggerFactory.getLogger(AccountMgmtApi.class);
-
+	
 	@POST
 	@Path("/register")
 	@Consumes({ "application/json" })
@@ -39,7 +35,7 @@ public class AccountMgmtApi {
 	@ApiOperation(value = "user signup request", notes = "user signup request", response = ApiResponseMessage.class, tags = {
 			"AccountMgmt" })
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "", response = ApiResponseMessage.class) })
-	public Response signup(@ApiParam(value = "") UserSignup body, @Context HttpServletRequest request,
+	public Response signup(@ApiParam(value = "signup request") UserSignup body, @Context HttpServletRequest request,
 			@Context HttpServletResponse response) {
 
 		return delegate.signup(body);
@@ -47,6 +43,8 @@ public class AccountMgmtApi {
 
 	@GET
 	@Path("/userinfo")
+	@Consumes({ "application/json" })
+	@Produces({ "application/json" })
 	@ApiOperation(value = "get user details request", notes = "get user details request.", response = ApiResponseMessage.class, tags = {
 			"AccountMgmt", })
 	@ApiResponses(value = {
@@ -60,12 +58,14 @@ public class AccountMgmtApi {
 
 	@POST
 	@Path("/login")
+	@Consumes({ "application/json" })
+	@Produces({ "application/json" })
 	@ApiOperation(value = "login request", notes = "login request.", response = ApiResponseMessage.class, tags = {
 			"AccountMgmt", })
 	@ApiResponses(value = {
 			@ApiResponse(code = 200, message = "response for userlogin request", response = ApiResponseMessage.class) })
 
-	public Response login(@ApiParam(value = "") UserSignIn body, @Context HttpServletRequest request,
+	public Response login(@ApiParam(value = "login request") UserSignIn body, @Context HttpServletRequest request,
 			@Context HttpServletResponse response) {
 
 		return delegate.login(body);

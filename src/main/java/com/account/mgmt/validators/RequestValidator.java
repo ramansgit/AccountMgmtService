@@ -58,6 +58,7 @@ public class RequestValidator<T> {
 	public void validateEmail(String email) throws ValidationException {
 		try {
 			Pattern pattern = Pattern.compile(AccountMgmtConstant.EMAIL_PATTERN);
+			
 			Matcher matcher = pattern.matcher(email);
 			if (!matcher.matches()) {
 				throw new ValidationException(AccountMgmtConstant.INVALID_EMAIL_FORMAT_ERR_MSG);

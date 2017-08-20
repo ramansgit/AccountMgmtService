@@ -15,11 +15,14 @@ public class AccountMgmtConstant {
 	//email account details
 	
 	public static final String EMAIL_ADMIN_USER = "sathish.raman36@gmail.com";
-	public static final String EMIAL_ADMIN_PWD = "Satman12";
+	public static final String EMAIL_ADMIN_PWD = "Satman12";
 	public static final String SMTP_HOST_SERVER ="smtp.gmail.com";
-	public static final String SMTP_HOST_PORT ="587";
+	public static final String SMTP_HOST_PORT ="25";
 	
+	//jwt token keys
 	
+	public static final String JWT_ISSUER="jwtappissuer";
+	public static final String JWT_SIGNING_KEY="MyCountryIndia123";
 	
 	// email pattern checker
 	
@@ -59,14 +62,12 @@ public class AccountMgmtConstant {
 	public static final String INVALID_PROPERTY_REQUEST_ERR_MSG = "Value can't be null for property";
 	public static final String INVALID_EMAIL_FORMAT_ERR_MSG = "invalid email format";
 
-	public static final String INVALID_JWT_TOKEN_ERR_MSG="invalid jwt token issued, please issue valid jwt token";
-	
-	public static final String EXPIRED_JWT_TOKEN_ERR_MSG="jwt token is valid for 15 mins only, it's expired now, please login to kaha system again. ";
+	public static final String INVALID_JWT_TOKEN_ERR_MSG="jwt token is invalid or expired, please issue valid jwt token";
 	
 	// success messages
 
 	public static final String SIGNUP_SUCCESS_MSG = "User Registered successfully";
-	public static final String LOGIN_SUCCESS_MSG="login successful !! Please check your mail box for the access link to view user info, note - this session will be active for 15 mins only";
+	public static final String LOGIN_SUCCESS_MSG="Login successful";
 	
 	
 	//end point for user details
