@@ -26,12 +26,12 @@ public class EmailUtil {
 
 		if (session == null) {
 			Properties properties = new Properties();
+
 			properties.put("mail.smtp.host", AccountMgmtConstant.SMTP_HOST_SERVER);
 			properties.put("mail.smtp.starttls.enable", "true");
 			properties.put("mail.smtp.port", AccountMgmtConstant.SMTP_HOST_PORT);
 			properties.put("mail.smtp.user", AccountMgmtConstant.EMAIL_ADMIN_USER);
 			properties.put("mail.smtp.auth", "true");
-			
 			session = Session.getDefaultInstance(properties);
 		}
 
