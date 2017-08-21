@@ -21,6 +21,11 @@ import com.account.mgmt.util.AccountMgmtConstant;
 public class RequestValidator<T> {
 	private static final Logger LOGGER = LoggerFactory.getLogger(RequestValidator.class);
 
+	/**
+	 * 
+	 * @param data
+	 * @throws ValidationException
+	 */
 	public void payloadValidator(T data) throws ValidationException {
 		Configuration<?> config = Validation.byDefaultProvider().configure();
 		ValidatorFactory factory = config.buildValidatorFactory();
@@ -42,12 +47,23 @@ public class RequestValidator<T> {
 		}
 	}
 
+	/**
+	 * 
+	 * @param data
+	 * @throws ValidationException
+	 */
 	public void paloadNullCheck(T data) throws ValidationException {
 		if (data == null) {
 			throw new ValidationException(AccountMgmtConstant.INVALID_PAYLOAD_REQUEST_ERR_MSG);
 		}
 	}
 
+	/**
+	 * 
+	 * @param propertyName
+	 * @param value
+	 * @throws ValidationException
+	 */
 	public void valueNullAndEmptyCheck(String propertyName, String value) throws ValidationException {
 		if (value == null || value.isEmpty()) {
 			throw new ValidationException(AccountMgmtConstant.INVALID_PROPERTY_REQUEST_ERR_MSG + propertyName);
@@ -55,6 +71,11 @@ public class RequestValidator<T> {
 
 	}
 
+	/**
+	 * 
+	 * @param email
+	 * @throws ValidationException
+	 */
 	public void validateEmail(String email) throws ValidationException {
 		try {
 			Pattern pattern = Pattern.compile(AccountMgmtConstant.EMAIL_PATTERN);

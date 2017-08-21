@@ -14,8 +14,8 @@ public class AccountMgmtConstant {
 	
 	//email account details
 	
-	public static final String EMAIL_ADMIN_USER = "sathish.raman36@gmail.com";
-	public static final String EMAIL_ADMIN_PWD = "Satman12";
+	public static final String EMAIL_ADMIN_USER = "";
+	public static final String EMAIL_ADMIN_PWD = "";
 	public static final String SMTP_HOST_SERVER ="smtp.gmail.com";
 	public static final String SMTP_HOST_PORT ="25";
 	

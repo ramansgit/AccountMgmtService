@@ -1,6 +1,5 @@
 package com.account.mgmt.handlers;
 
-import java.util.Random;
 import java.util.UUID;
 
 import com.account.mgmt.db.AccountMgmtDaoService;
