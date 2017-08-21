@@ -36,7 +36,7 @@ Deployment Steps:
 java -jar AccountMgmtService-1.0-SNAPSHOT.jar server ../config.yml
 
 	
-3. Testing Uplication via Swagger endpoint
+3. Testing Application via Swagger endpoint
 
 http://localhost:9095/swagger
 
